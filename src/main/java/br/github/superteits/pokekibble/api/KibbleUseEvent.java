@@ -8,6 +8,8 @@ import org.spongepowered.api.event.cause.Cause;
 import org.spongepowered.api.event.cause.EventContext;
 import org.spongepowered.api.event.impl.AbstractEvent;
 
+import com.pixelmonmod.pixelmon.storage.PlayerPartyStorage;
+
 import java.util.Optional;
 
 /**
@@ -18,15 +20,15 @@ public class KibbleUseEvent extends AbstractEvent implements Cancellable {
 
     private Cause cause;
     private EventContext context;
-    private NBTTagCompound[] party;
+    private PlayerPartyStorage party;
     private boolean cancelled;
     private boolean consumeKibble;
 
-    public KibbleUseEvent(Entity player, NBTTagCompound[] party) {
+    public KibbleUseEvent(Entity player, PlayerPartyStorage storage) {
         context = EventContext.builder().build();
         cause = Cause.builder().append(player).build(context);
         cancelled = false;
-        this.party = party;
+        this.party = storage;
         consumeKibble = true;
     }
 
@@ -67,7 +69,7 @@ public class KibbleUseEvent extends AbstractEvent implements Cancellable {
      * Gets the party of the player who triggered this.
      * @return an {@link Optional} of {@link NBTTagCompound[]}
      */
-    public Optional<NBTTagCompound[]> getPokemonParty() {
+    public Optional<PlayerPartyStorage> getPokemonParty() {
         return Optional.of(party);
     }
 
