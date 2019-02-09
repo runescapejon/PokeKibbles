@@ -33,7 +33,7 @@ import java.nio.file.Path;
         version = PokeKibble.VERSION,
         authors = "Teits",
         description = PokeKibble.DESCRIPTION,
-        dependencies = @Dependency(id = "pixelmon", version = "[7.0.1]"))
+        dependencies = @Dependency(id = "pixelmon"))
 public class PokeKibble {
 
     public static final String ID = "pokekibble";
