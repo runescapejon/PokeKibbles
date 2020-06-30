@@ -1,2 +1,3 @@
 # PokeKibbles
-Designed and developed to ComplexPixelmon server
+If you need support I'd made a discord for it.
+https://discord.gg/XXgEpq3
